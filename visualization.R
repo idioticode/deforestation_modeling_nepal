@@ -467,12 +467,16 @@ var_imp <- var_imp %>%
   ) %>%
   ungroup()
 
+
 # Calculate weighted importance using the weights from weight_values
 var_imp <- var_imp %>% 
   mutate(
     weighted_imp = (rf_weight * RF_Importance + xgb_weight * XGB_Importance) /
       (rf_weight + xgb_weight)
   )
+
+
+var_imp |> print(n = 10)
 
 # Handle high_himalaya separately (only RF)
 high_himal_var_imp <- read.csv(
@@ -485,34 +489,45 @@ high_himal_var_imp <- high_himal_var_imp |>
     region = "high_himalaya"
   )
 
-# Combine all regions
-final_var_imp <- rbind(
-  var_imp[ , c("Feature", "weighted_imp", "region")],
-  high_himal_var_imp[ , c("Feature", "weighted_imp", "region")]
+
+
+# Compute error as standard deviation across RF and XGB normalized importance
+var_imp_with_err <- var_imp %>%
+  rowwise() %>%
+  mutate(se = sd(c(RF_Importance, XGB_Importance))) %>%
+  ungroup() %>%
+  select(Feature, region, weighted_imp, se)
+
+# Handle High Himalaya (RF only, so no error bars)
+high_himal_err <- high_himal_var_imp %>%
+  mutate(se = NA) %>%
+  select(Feature, region, weighted_imp, se)
+
+# Combine
+final_var_imp_err <- bind_rows(var_imp_with_err, high_himal_err)
+
+# Rename features and regions (same as before)
+final_var_imp_err$Feature <- recode(final_var_imp_err$Feature,
+                                    "aspect" = "Aspect",
+                                    "dist_cropland" = "Distance to Cropland",
+                                    "dist_road" = "Distance to Road",
+                                    "dist_settlement" = "Distance to Settlement",
+                                    "dist_stream" = "Distance to Stream",
+                                    "elevation" = "Elevation",
+                                    "night_light" = "Night Light",
+                                    "popn_density" = "Population Density",
+                                    "slope" = "Slope"
 )
 
-# Rename Features for better understanding
-final_var_imp$Feature <- dplyr::recode(final_var_imp$Feature,
-                                       "aspect" = "Aspect",
-                                       "dist_cropland" = "Distance to Cropland",
-                                       "dist_road" = "Distance to Road",
-                                       "dist_settlement" = "Distance to Settlement",
-                                       "dist_stream" = "Distance to Stream",
-                                       "elevation" = "Elevation",
-                                       "night_light" = "Night Light",
-                                       "popn_density" = "Population Density",
-                                       "slope" = "Slope")
+final_var_imp_err$region <- recode(final_var_imp_err$region,
+                                   "high_himalaya" = "High Himalaya",
+                                   "high_mountains" = "High Mountains",
+                                   "middle_mountains" = "Middle Mountains",
+                                   "siwalik" = "Siwalik",
+                                   "terai" = "Terai"
+)
 
-# Rename regions for better understanding
-final_var_imp$region <- dplyr::recode(final_var_imp$region,
-                                      "high_himalaya" = "High Himalaya",
-                                      "high_mountains" = "High Mountains",
-                                      "middle_mountains" = "Middle Mountains",
-                                      "siwalik" = "Siwalik",
-                                      "terai" = "Terai")
-
-# Create variable importance plot
-var_imp_plot <- ggplot(data = final_var_imp, aes(x = Feature, y = weighted_imp)) +
+ggplot(data = final_var_imp, aes(x = Feature, y = weighted_imp)) +
   geom_bar(stat = "identity", fill = "#199AF0") +
   facet_wrap(~region) +
   coord_flip() +
@@ -536,13 +551,35 @@ var_imp_plot <- ggplot(data = final_var_imp, aes(x = Feature, y = weighted_imp))
     axis.ticks.y = element_blank()
   )
 
-# Save plots
-ggsave(
-  "D:/Drive/Deforestation Modeling/Final_Images/SVG/variable_importance.svg",
-  plot = var_imp_plot,
-  width = 8, 
-  height = 6
-)  
+
+# Create variable importance plot
+var_imp_plot <- ggplot(final_var_imp_err, aes(x = Feature, y = weighted_imp)) +
+  geom_bar(stat = "identity", fill = "#199AF0") +
+  geom_errorbar(aes(ymin = weighted_imp - se, ymax = weighted_imp + se),
+                width = 0.3) +
+  facet_wrap(~region) +
+  coord_flip() +
+  labs(x = "Predictor Variables",
+       y = "Relative Variable Importance") +
+  theme_bw() +
+  theme(
+    panel.grid = element_blank(),
+    strip.background = element_blank(),
+    axis.text = element_text(color = "black",
+                             family = "Segoe UI",
+                             size = 10),
+    strip.text = element_text(color = "black",
+                              size = 10,
+                              face = "bold", 
+                              family = "Segoe UI"),
+    axis.title = element_text(color = "black",
+                              size = 10,
+                              face = "bold", 
+                              family = "Segoe UI"),
+    axis.ticks.y = element_blank(),
+    plot.background = element_rect(linewidth = 0.5, color = "black")
+  )
+
 
 ggsave(
   "D:/Drive/Deforestation Modeling/Final_Images/JPEG/variable_importance.jpg",
@@ -551,6 +588,16 @@ ggsave(
   height = 6,
   dpi = 1000
 )
+
+# Save plots
+ggsave(
+  "D:/Drive/Deforestation Modeling/Final_Images/SVG/variable_importance.svg",
+  plot = var_imp_plot,
+  width = 8, 
+  height = 6
+)  
+
+
 
 
 

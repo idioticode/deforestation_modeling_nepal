@@ -429,4 +429,99 @@ write.csv(
   row.names = F
 )
 
+# ==== FINAL ACTUAL AREA ========================================
+
+library(sf)
+library(tidyverse)
+
+# ==== Physiography ====
+physio <- st_read("https://raw.githubusercontent.com/idioticode/physiographic_zones_of_nepal/main/geojson_files/physiography_nepal_updated.geojson")
+
+physio_areas <- physio %>%
+  mutate(area_ha = as.numeric(st_area(.)) / 1e4) %>%
+  group_by(Physio) %>%
+  summarise(total_area_ha = sum(area_ha), .groups = "drop") %>%
+  mutate(Physio = tolower(gsub(" ", "_", Physio)))
+
+cf <- 14751500 / sum(physio_areas$total_area_ha)
+physio_areas <- mutate(physio_areas, adjusted_area_ha = total_area_ha * cf)
+
+area_physio <- read.csv("D:/Drive/Deforestation Modeling/Working Documents/Area/area_covered_physiography.csv") %>%
+  select(region, predicted_bin, percentage_physiography)
+
+forest_prop_physio <- data.frame(
+  region = c("high_himalaya", "high_mountains", "middle_mountains", "siwalik", "terai"),
+  forest_prop = c(3.41, 57.20, 64.54, 73.67, 19.92) / 100
+)
+
+physio_result <- area_physio %>%
+  left_join(physio_areas, by = c("region" = "Physio")) %>%
+  left_join(forest_prop_physio, by = "region") %>%
+  mutate(
+    forest_area_ha = adjusted_area_ha * forest_prop,
+    bin_area_ha    = forest_area_ha * percentage_physiography / 100
+  ) %>%
+  select(region, predicted_bin, bin_area_ha, percentage_physiography)|>
+  rename(bin_risk_percentage = percentage_physiography)
+
+write.csv(
+  physio_result,
+  "D:/Drive/Deforestation Modeling/Working Documents/Area/FINAL ACTUAL AREAS/final_actual_area_physiography.csv",
+  row.names = F
+)
+
+# ==== OVERALL (Nepal) ====
+
+bin_totals <- physio_result %>%
+  group_by(predicted_bin) %>%
+  summarise(total_bin_area_ha = sum(bin_area_ha, na.rm = TRUE)) %>% 
+  mutate(
+    bin_percentage = total_bin_area_ha/sum(total_bin_area_ha)*100
+  )
+
+bin_totals
+
+write.csv(
+  bin_totals,
+  "D:/Drive/Deforestation Modeling/Working Documents/Area/FINAL ACTUAL AREAS/final_actual_area_overall_nepal.csv",
+  row.names = F
+)
+
+
+
+# ==== Province ===
+province <- st_read("D:/MISC/points/hermes shape files/hermes_NPL_new_wgs_1.shp")
+
+province_areas <- province %>%
+  mutate(area_ha = as.numeric(st_area(.)) / 1e4) %>%
+  transmute(province = as.integer(PROVINCE), total_area_ha = area_ha)
+
+cf <- 14751500 / sum(province_areas$total_area_ha)
+province_areas <- mutate(province_areas, adjusted_area_ha = total_area_ha * cf)
+
+area_province <- read.csv("D:/Drive/Deforestation Modeling/Working Documents/Area/area_covered_province.csv") %>%
+  select(province, predicted_bin, percentage_province)
+
+forest_prop_province <- data.frame(
+  province = 1:7,
+  forest_prop = c(46.23, 25.86, 58.62, 37.98, 54.66, 27.93, 51.33) / 100
+)
+
+province_result <- area_province %>%
+  mutate(province = as.integer(province)) %>%
+  left_join(province_areas, by = "province") %>%
+  left_join(forest_prop_province, by = "province") %>%
+  mutate(
+    forest_area_ha = adjusted_area_ha * forest_prop,
+    bin_area_ha    = forest_area_ha * percentage_province / 100
+  ) %>%
+  select(province, predicted_bin, bin_area_ha, percentage_province) |>
+  rename(risk_percentage_bins = percentage_province)
+
+
+write.csv(
+  province_result,
+  "D:/Drive/Deforestation Modeling/Working Documents/Area/FINAL ACTUAL AREAS/final_actual_area_province.csv",
+  row.names = F
+)
 

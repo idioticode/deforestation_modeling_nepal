@@ -1,0 +1,386 @@
+districts,risk_classes,percentage_risk
+Achham,High,16.45472142
+Arghakhanchi,High,15.45387482
+Baglung,High,12.43548992
+Baitadi,High,14.14920725
+Bajhang,High,12.36764524
+Bajura,High,14.79265152
+Banke,High,3.042941604
+Bara,High,2.768659399
+Bardiya,High,4.576931165
+Bhaktapur,High,15.54243957
+Bhojpur,High,16.86661745
+Chitawan,High,8.277295726
+Dadeldhura,High,9.90309266
+Dailekh,High,14.29511334
+Dang,High,7.281348364
+Darchula,High,14.19588208
+Dhading,High,15.53583623
+Dhankuta,High,19.80124304
+Dhanusha,High,4.053455405
+Dolakha,High,15.71142531
+Dolpa,High,22.50375411
+Doti,High,12.79541507
+Gorkha,High,16.46838545
+Gulmi,High,17.29766298
+Humla,High,17.55597611
+Ilam,High,17.70427411
+Jajarkot,High,14.10391809
+Jhapa,High,17.22786062
+Jumla,High,21.41534616
+Kabhrepalanchok,High,15.77726218
+Kailali,High,7.728602303
+Kalikot,High,17.41973781
+Kanchanpur,High,4.00005741
+Kapilbastu,High,5.625664494
+Kaski,High,14.40307651
+Kathmandu,High,12.87407349
+Khotang,High,18.16015938
+Lalitpur,High,13.08775973
+Lamjung,High,12.99362736
+Mahottari,High,2.185102003
+Makawanpur,High,10.36631229
+Manang,High,12.33864844
+Morang,High,9.798563398
+Mugu,High,15.24801298
+Mustang,High,9.382472922
+Myagdi,High,9.984507016
+Nawalpur,High,11.38305782
+Nuwakot,High,16.89565024
+Okhaldhunga,High,15.6011073
+Palpa,High,14.78980751
+Panchthar,High,13.95542049
+Parasi,High,11.39162562
+Parbat,High,13.14016501
+Parsa,High,3.003006182
+Pyuthan,High,14.92351377
+Ramechhap,High,17.51334944
+Rasuwa,High,15.42161476
+Rautahat,High,4.463344345
+Rolpa,High,11.41026175
+Rukum East,High,12.471303
+Rukum West,High,13.00652054
+Rupandehi,High,10.55872634
+Salyan,High,13.16476366
+Sankhuwasabha,High,12.35564345
+Saptari,High,6.900119941
+Sarlahi,High,5.350127109
+Sindhuli,High,10.71307499
+Sindhupalchok,High,15.21905085
+Siraha,High,12.73199468
+Solukhumbu,High,12.32358054
+Sunsari,High,7.419037451
+Surkhet,High,11.31635993
+Syangja,High,17.79224694
+Tanahu,High,16.10189765
+Taplejung,High,14.00269168
+Terhathum,High,23.59424431
+Udayapur,High,11.03976554
+Achham,Low,26.22515454
+Arghakhanchi,Low,27.68929578
+Baglung,Low,27.37459597
+Baitadi,Low,27.90304967
+Bajhang,Low,30.38870308
+Bajura,Low,27.11305121
+Banke,Low,11.29084074
+Bara,Low,9.803522224
+Bardiya,Low,14.52116976
+Bhaktapur,Low,17.87521079
+Bhojpur,Low,26.52680366
+Chitawan,Low,21.13449462
+Dadeldhura,Low,20.95471676
+Dailekh,Low,27.469745
+Dang,Low,20.56235481
+Darchula,Low,31.37720656
+Dhading,Low,27.77808303
+Dhankuta,Low,25.78499288
+Dhanusha,Low,14.60794448
+Dolakha,Low,28.69543788
+Dolpa,Low,36.37590526
+Doti,Low,21.60502501
+Gorkha,Low,27.61939252
+Gulmi,Low,27.72816728
+Humla,Low,34.58844348
+Ilam,Low,26.56999581
+Jajarkot,Low,27.83601435
+Jhapa,Low,16.30088301
+Jumla,Low,35.89005251
+Kabhrepalanchok,Low,25.18139633
+Kailali,Low,19.9766181
+Kalikot,Low,30.26772509
+Kanchanpur,Low,13.43758073
+Kapilbastu,Low,14.50869813
+Kaski,Low,28.40954964
+Kathmandu,Low,26.07713346
+Khotang,Low,25.23259874
+Lalitpur,Low,24.919154
+Lamjung,Low,25.95825953
+Mahottari,Low,10.64476886
+Makawanpur,Low,23.35312636
+Manang,Low,35.83902809
+Morang,Low,18.0180356
+Mugu,Low,35.92651159
+Mustang,Low,34.54775637
+Myagdi,Low,30.43587347
+Nawalpur,Low,21.69869934
+Nuwakot,Low,26.92526977
+Okhaldhunga,Low,28.16207487
+Palpa,Low,26.95043833
+Panchthar,Low,24.20171191
+Parasi,Low,18.16927128
+Parbat,Low,26.77586291
+Parsa,Low,19.51477687
+Pyuthan,Low,28.6438985
+Ramechhap,Low,27.37766206
+Rasuwa,Low,31.45866009
+Rautahat,Low,10.4168131
+Rolpa,Low,28.4948608
+Rukum East,Low,33.35835683
+Rukum West,Low,29.16804148
+Rupandehi,Low,18.61670171
+Salyan,Low,26.62352548
+Sankhuwasabha,Low,23.85636217
+Saptari,Low,12.49500247
+Sarlahi,Low,17.48324474
+Sindhuli,Low,23.03169407
+Sindhupalchok,Low,28.52707918
+Siraha,Low,18.66725787
+Solukhumbu,Low,28.89006747
+Sunsari,Low,15.88059202
+Surkhet,Low,24.51821312
+Syangja,Low,28.93832519
+Tanahu,Low,27.34351487
+Taplejung,Low,25.85203658
+Terhathum,Low,27.28084498
+Udayapur,Low,19.84503827
+Achham,Medium,12.44198389
+Arghakhanchi,Medium,11.95831048
+Baglung,Medium,11.23948642
+Baitadi,Medium,10.8659602
+Bajhang,Medium,11.61550849
+Bajura,Medium,11.91852948
+Banke,Medium,3.081830837
+Bara,Medium,2.713549778
+Bardiya,Medium,4.280358787
+Bhaktapur,Medium,8.712759978
+Bhojpur,Medium,11.34797588
+Chitawan,Medium,7.540780706
+Dadeldhura,Medium,7.849045881
+Dailekh,Medium,11.4121658
+Dang,Medium,7.294924527
+Darchula,Medium,13.11761401
+Dhading,Medium,12.69083745
+Dhankuta,Medium,13.03088178
+Dhanusha,Medium,4.359864146
+Dolakha,Medium,12.89837661
+Dolpa,Medium,19.07848467
+Doti,Medium,9.623991366
+Gorkha,Medium,13.13664453
+Gulmi,Medium,13.01230012
+Humla,Medium,16.11325485
+Ilam,Medium,12.76101908
+Jajarkot,Medium,11.63470686
+Jhapa,Medium,8.972996739
+Jumla,Medium,18.80683843
+Kabhrepalanchok,Medium,10.94705758
+Kailali,Medium,7.191563886
+Kalikot,Medium,12.70411397
+Kanchanpur,Medium,4.133536183
+Kapilbastu,Medium,4.870645156
+Kaski,Medium,13.11199088
+Kathmandu,Medium,9.104601847
+Khotang,Medium,11.54059438
+Lalitpur,Medium,10.09552838
+Lamjung,Medium,11.33774985
+Mahottari,Medium,2.629608834
+Makawanpur,Medium,9.175722135
+Manang,Medium,32.17539863
+Morang,Medium,7.848610244
+Mugu,Medium,13.48882693
+Mustang,Medium,48.12209875
+Myagdi,Medium,11.24276315
+Nawalpur,Medium,8.944194905
+Nuwakot,Medium,12.80801535
+Okhaldhunga,Medium,11.72225152
+Palpa,Medium,11.99143806
+Panchthar,Medium,10.43978268
+Parasi,Medium,8.087735689
+Parbat,Medium,11.36308158
+Parsa,Medium,5.012067067
+Pyuthan,Medium,12.75069865
+Ramechhap,Medium,13.02014077
+Rasuwa,Medium,13.27059526
+Rautahat,Medium,3.876432136
+Rolpa,Medium,10.37077109
+Rukum East,Medium,13.31104496
+Rukum West,Medium,11.25932909
+Rupandehi,Medium,8.448483028
+Salyan,Medium,10.74078692
+Sankhuwasabha,Medium,11.59993058
+Saptari,Medium,4.879941676
+Sarlahi,Medium,5.535012711
+Sindhuli,Medium,9.215900944
+Sindhupalchok,Medium,12.6353959
+Siraha,Medium,8.899727624
+Solukhumbu,Medium,13.33814589
+Sunsari,Medium,6.25719609
+Surkhet,Medium,9.455802553
+Syangja,Medium,13.82890215
+Tanahu,Medium,12.03803027
+Taplejung,Medium,13.50552191
+Terhathum,Medium,14.7055822
+Udayapur,Medium,8.247435647
+Achham,Very High,4.039794368
+Arghakhanchi,Very High,4.099911098
+Baglung,Very High,3.435329202
+Baitadi,Very High,3.593674163
+Bajhang,Very High,4.070357983
+Bajura,Very High,7.418824284
+Banke,Very High,1.063535989
+Bara,Very High,1.132143285
+Bardiya,Very High,1.439354937
+Bhaktapur,Very High,19.70207982
+Bhojpur,Very High,4.773184037
+Chitawan,Very High,3.97500207
+Dadeldhura,Very High,2.913949871
+Dailekh,Very High,3.60966565
+Dang,Very High,2.61517111
+Darchula,Very High,4.143545669
+Dhading,Very High,5.215504046
+Dhankuta,Very High,6.406189305
+Dhanusha,Very High,1.284701713
+Dolakha,Very High,4.754335705
+Dolpa,Very High,8.120283602
+Doti,Very High,2.879932553
+Gorkha,Very High,5.122050824
+Gulmi,Very High,5.255842558
+Humla,Very High,4.986850837
+Ilam,Very High,5.728058872
+Jajarkot,Very High,3.82732105
+Jhapa,Very High,18.10354303
+Jumla,Very High,6.617058683
+Kabhrepalanchok,Very High,6.107361316
+Kailali,Very High,2.378246451
+Kalikot,Very High,6.86064411
+Kanchanpur,Very High,1.698625025
+Kapilbastu,Very High,3.109446987
+Kaski,Very High,3.802434861
+Kathmandu,Very High,9.536644338
+Khotang,Very High,4.775205899
+Lalitpur,Very High,5.423187005
+Lamjung,Very High,4.099037486
+Mahottari,Very High,0.715889949
+Makawanpur,Very High,3.326705268
+Manang,Very High,3.264996203
+Morang,Very High,4.514756402
+Mugu,Very High,3.832549623
+Mustang,Very High,0.872133915
+Myagdi,Very High,2.964366136
+Nawalpur,Very High,4.581843738
+Nuwakot,Very High,5.379491601
+Okhaldhunga,Very High,4.673081993
+Palpa,Very High,4.525709429
+Panchthar,Very High,4.143117942
+Parasi,Very High,5.599201631
+Parbat,Very High,2.912171069
+Parsa,Very High,0.571597934
+Pyuthan,Very High,3.580206732
+Ramechhap,Very High,6.709876844
+Rasuwa,Very High,4.71282396
+Rautahat,Very High,1.806424404
+Rolpa,Very High,2.499271774
+Rukum East,Very High,3.675835159
+Rukum West,Very High,3.734778851
+Rupandehi,Very High,6.717482728
+Salyan,Very High,3.89155449
+Sankhuwasabha,Very High,4.068014158
+Saptari,Very High,4.576562169
+Sarlahi,Very High,1.502195517
+Sindhuli,Very High,3.630119096
+Sindhupalchok,Very High,4.622757538
+Siraha,Very High,4.852093495
+Solukhumbu,Very High,3.286779222
+Sunsari,Very High,4.264271808
+Surkhet,Very High,3.2221136
+Syangja,Very High,4.909869175
+Tanahu,Very High,4.955973484
+Taplejung,Very High,4.759133911
+Terhathum,Very High,6.347586488
+Udayapur,Very High,3.535378946
+Achham,Very Low,40.83834579
+Arghakhanchi,Very Low,40.79860783
+Baglung,Very Low,45.51509848
+Baitadi,Very Low,43.48810872
+Bajhang,Very Low,41.55778521
+Bajura,Very Low,38.75694351
+Banke,Very Low,81.52085083
+Bara,Very Low,83.58212531
+Bardiya,Very Low,75.18218535
+Bhaktapur,Very Low,38.16750984
+Bhojpur,Very Low,40.48541897
+Chitawan,Very Low,59.07242688
+Dadeldhura,Very Low,58.37919483
+Dailekh,Very Low,43.21331021
+Dang,Very Low,62.24620119
+Darchula,Very Low,37.16575168
+Dhading,Very Low,38.77973924
+Dhankuta,Very Low,34.97669299
+Dhanusha,Very Low,75.69403426
+Dolakha,Very Low,37.94042448
+Dolpa,Very Low,13.92157235
+Doti,Very Low,53.095636
+Gorkha,Very Low,37.65352668
+Gulmi,Very Low,36.70602706
+Humla,Very Low,26.75547472
+Ilam,Very Low,37.23665212
+Jajarkot,Very Low,42.59803964
+Jhapa,Very Low,39.39471659
+Jumla,Very Low,17.27070423
+Kabhrepalanchok,Very Low,41.98692259
+Kailali,Very Low,62.72496926
+Kalikot,Very Low,32.74777902
+Kanchanpur,Very Low,76.73020065
+Kapilbastu,Very Low,71.88554523
+Kaski,Very Low,40.27294811
+Kathmandu,Very Low,42.40754687
+Khotang,Very Low,40.2914416
+Lalitpur,Very Low,46.47437089
+Lamjung,Very Low,45.61132577
+Mahottari,Very Low,83.82463036
+Makawanpur,Very Low,53.77813395
+Manang,Very Low,16.38192863
+Morang,Very Low,59.82003435
+Mugu,Very Low,31.50409887
+Mustang,Very Low,7.07553805
+Myagdi,Very Low,45.37249023
+Nawalpur,Very Low,53.39220419
+Nuwakot,Very Low,37.99157303
+Okhaldhunga,Very Low,39.84148431
+Palpa,Very Low,41.74260667
+Panchthar,Very Low,47.25996699
+Parasi,Very Low,56.75216579
+Parbat,Very Low,45.80871943
+Parsa,Very Low,71.89855195
+Pyuthan,Very Low,40.10168236
+Ramechhap,Very Low,35.37897089
+Rasuwa,Very Low,35.13630592
+Rautahat,Very Low,79.43698601
+Rolpa,Very Low,47.22483459
+Rukum East,Very Low,37.18346005
+Rukum West,Very Low,42.83133003
+Rupandehi,Very Low,55.65860619
+Salyan,Very Low,45.57936945
+Sankhuwasabha,Very Low,48.12004964
+Saptari,Very Low,71.14837374
+Sarlahi,Very Low,70.12941992
+Sindhuli,Very Low,53.4092109
+Sindhupalchok,Very Low,38.99571653
+Siraha,Very Low,54.84892633
+Solukhumbu,Very Low,42.16142687
+Sunsari,Very Low,66.17890264
+Surkhet,Very Low,51.4875108
+Syangja,Very Low,34.53065654
+Tanahu,Very Low,39.56058373
+Taplejung,Very Low,41.88061592
+Terhathum,Very Low,28.07174201
+Udayapur,Very Low,57.33238159

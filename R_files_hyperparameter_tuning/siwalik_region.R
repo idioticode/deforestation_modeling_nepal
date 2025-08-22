@@ -201,26 +201,12 @@ modeling_data <- siwalik %>%
   )
 
 
-# MULTICOLLINEARITY ASSESSMENT ------------------------------------------------
-names(modeling_data)
 
-multicollinearity_function(
-  data = modeling_data[
-    modeling_data$deforested ==1 ,
-    c(
-      "aspect", "dist_cropland", "dist_road", "dist_settlement", "dist_stream", 
-      "elevation", "night_light", "popn_density", "slope"
-    )
-  ],
-  
-  th = 0.7
-)
+#TEST-TRAIN SPLIT --------------------------------------------------------
 
-# TEST-TRAIN SPLIT -------------------------------------------------------------
+set.seed(23)
 
-nrow(modeling_data[modeling_data$deforested == 1, ])
-
-# Assuming `modeling_data` is your data 
+# 
 test_train_list <- train_test_split(
   n_data =nrow(modeling_data[modeling_data$deforested == 1, ]), 
   original_data = modeling_data,
@@ -242,6 +228,17 @@ testing_data <- test_train_list$testing_data%>%
     "aspect", "dist_cropland",  "dist_road", "dist_settlement",  "dist_stream",
     "elevation", "night_light", "popn_density", "slope", "deforested"   
   ) 
+
+
+# MULTICOLLINEARITY ASSESSMENT -------------------------------------------
+names(modeling_data)
+
+vif_values <- multicollinearity_function(
+  data = training_data |> select(-deforested),
+  th = 0.7
+)
+
+vif_values
 
 
 # RF --------------------------------------
